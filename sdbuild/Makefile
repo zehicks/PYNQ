@@ -13,7 +13,8 @@ UBUNTU_RELEASE := jammy
 VERSION := 3.0.1
 
 KERNEL_VERSION := 2022.1
-LINUX_VERSION := 5.15.19-xilinx-v2022.1
+# LINUX_VERSION := 5.15.19-xilinx-v2022.1
+LINUX_VERSION := 5.15.36-xilinx-v2022.1
 QEMU_VERSION := 5.2.0
 SCRIPT_DIR := $(CURDIR)/scripts
 SHELL := /bin/bash
@@ -157,7 +158,7 @@ $$(PL_PROJ_$1): $$(BSP_TARGET_$1)
 	-rm -rf $$(PL_PROJ_$1)
 	cd $$(BUILD_ROOT_$1) && petalinux-create -t project \
 		-s $$(BSP_BUILD_$1)/$$(BSP_PROJECT_$1).bsp -n petalinux_project
-	echo 'CONFIG_USER_LAYER_0="'$(CURDIR)/boot/meta-pynq'"' >> $$(PL_CONFIG_$1)
+	echo 'CONFIG_USER_LAYER_2="'$(CURDIR)/boot/meta-pynq'"' >> $$(PL_CONFIG_$1)
 	echo 'CONFIG_SUBSYSTEM_ROOTFS_EXT4=y' >> $$(PL_CONFIG_$1)
 	echo 'CONFIG_SUBSYSTEM_SDROOT_DEV="/dev/mmcblk0p2"' >> $$(PL_CONFIG_$1)
 	echo 'CONFIG_SUBSYSTEM_ETHERNET_MANUAL_SELECT=y' >> $$(PL_CONFIG_$1)
