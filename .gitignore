@@ -48,8 +48,7 @@ __pycache__/
 GNUmakefile
 user.props
 
-boards/Pluto
-boards/PlutoSDR
-boards/Cora-Z7
 sdbuild/prebuilt/*
 tools/
+boards/e200
+boards/PlutoSDR
